@@ -1,0 +1,10 @@
+one
+.DS_Store
+
+/.idea/
+/.vscode/
+/dist
+.history
+/*.log
+
+/db/one.db/

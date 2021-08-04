@@ -1,0 +1,6 @@
+# report
+127.0.0.1:8080/miner/report/download
+
+# orphan block
+curl 127.0.0.1:8080/orphanblock/view/last5block/human
+curl 127.0.0.1:8080/orphanblock/view/all/human

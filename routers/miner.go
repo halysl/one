@@ -6,7 +6,6 @@ import (
 	"github.com/halysl/one/db"
 	. "github.com/halysl/one/log"
 	"strings"
-	"math/big"
 )
 
 var (
@@ -18,14 +17,14 @@ var (
 
 type FilscoutOverviewInfo struct {
 	Data struct {
-		Height             int     `json:"tipSetHeight"`
-		TotalPower         float64 `json:"totalPower"`
-		ActiveMiners       int     `json:"activeMiners"`
-		AvgBlocksReword    float64 `json:"avgBlocksReword"`
+		Height           int     `json:"tipSetHeight"`
+		TotalPower       float64 `json:"totalPower"`
+		ActiveMiners     int     `json:"activeMiners"`
+		AvgBlocksReword  float64 `json:"avgBlocksReword"`
 		BlockRewardIn24h float64 `json:"blockRewardIn24h"`
-		OutPutFil24H       float64 `json:"newlyFilIn24h"`
-		MessageCount24H    int     `json:"oneDayMessages"`
-		CostPerTB          float64 `json:"currentPledgeCollateralTB"`
+		OutPutFil24H     float64 `json:"newlyFilIn24h"`
+		MessageCount24H  int     `json:"oneDayMessages"`
+		CostPerTB        float64 `json:"currentPledgeCollateralTB"`
 	} `json:"data"`
 }
 
@@ -36,7 +35,6 @@ type MinerInfo struct {
 		RawPower     int64  `json:"rawPower"`
 		Blocks       int    `json:"blocks"`
 		WinCount     int    `json:"winCount"`
-		BlockReward  big.Int  `json:"blockReward"`
 		PowerRank    int    `json:"powerRank"`
 		Sectors      struct {
 			SectorSize    int64 `json:"sectorSize"`
@@ -46,7 +44,6 @@ type MinerInfo struct {
 			RecoveryCount int   `json:"recoveryCount"`
 		} `json:"sectors"`
 		Balance struct {
-			Balance       big.Int `json:"balance"`
 			Available     int64 `json:"available"`
 			SectorsPledge int64 `json:"sectorsPledge"`
 			LockedFunds   int64 `json:"lockedFunds"`
@@ -61,9 +58,8 @@ type MinerStats struct {
 		ProvingPower          int     `json:"provingPower"`
 		MiningEfficiencyFloat float64 `json:"miningEfficiencyFloat"`
 		MiningEfficiency      string  `json:"miningEfficiency"`
-		MachinesNum           float64     `json:"machinesNum"`
+		MachinesNum           float64 `json:"machinesNum"`
 		Blocks                int     `json:"blocks"`
-		BlockReward           big.Int   `json:"blockReward"`
 		LuckyValueFloat       float64 `json:"luckyValueFloat"`
 		StatsType             string  `json:"statsType"`
 	} `json:"data"`
